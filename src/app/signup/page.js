@@ -2,6 +2,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { useGlobalContext } from "../redux/store"; // Adjust path as necessary
+import Link from "next/link";
 
 const Signup = () => {
   const { setUser } = useGlobalContext(); 
@@ -126,9 +127,9 @@ const Signup = () => {
         {step === 1 && (
           <p className="text-center mt-4">
             Already have an account?{" "}
-            <a href="/signin" className="text-blue-500 hover:underline">
+            <Link href="/signin" className="text-blue-500 hover:underline">
               Sign In
-            </a>
+            </Link>
           </p>
         )}
       </div>

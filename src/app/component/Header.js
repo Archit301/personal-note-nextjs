@@ -1,6 +1,7 @@
 "use client";
 import { useState } from 'react';
 import { useGlobalContext } from '../redux/store'; // Adjusted the path to import from redux/store.js
+import Link from 'next/link';
 
 function Header() {
   const [isMenuOpen, setMenuOpen] = useState(false);
@@ -42,14 +43,14 @@ function Header() {
       <div className="container mx-auto flex justify-between items-center p-4">
         {/* Logo and Title */}
         <div className="text-2xl font-semibold">
-          <a href="/" className="hover:text-indigo-200">Notes & To-Do</a>
+          <Link href="/" className="hover:text-indigo-200">Notes & To-Do</Link>
         </div>
 
         {/* Navigation Links */}
         <nav className="hidden md:flex space-x-6">
-          <a href="/" className="hover:text-indigo-200">Home</a>
-          <a href="/notes" className="hover:text-indigo-200">Notes</a>
-          <a href="/todo" className="hover:text-indigo-200">To-Dos</a>
+          <Link href="/" className="hover:text-indigo-200">Home</Link>
+          <Link href="/notes" className="hover:text-indigo-200">Notes</Link>
+          <Link href="/todo" className="hover:text-indigo-200">To-Dos</Link>
         </nav>
 
         {/* User Profile/Login */}
@@ -81,7 +82,7 @@ function Header() {
               )}
             </div>
           ) : (
-            <a href="/signup" className="hover:text-indigo-200">Login</a>
+            <Link href="/signup" className="hover:text-indigo-200">Login</Link>
           )}
         </div>
 
@@ -99,9 +100,9 @@ function Header() {
       {/* Mobile Menu Links */}
       {isMenuOpen && (
         <div className="md:hidden bg-indigo-700 text-white">
-          <a href="/" className="block px-4 py-2 hover:bg-indigo-800">Home</a>
-          <a href="/notes" className="block px-4 py-2 hover:bg-indigo-800">Notes</a>
-          <a href="/todo" className="block px-4 py-2 hover:bg-indigo-800">To-Dos</a>
+          <Link href="/" className="block px-4 py-2 hover:bg-indigo-800">Home</Link>
+          <Link href="/notes" className="block px-4 py-2 hover:bg-indigo-800">Notes</Link>
+          <Link href="/todo" className="block px-4 py-2 hover:bg-indigo-800">To-Dos</Link>
         </div>
       )}
     </header>
